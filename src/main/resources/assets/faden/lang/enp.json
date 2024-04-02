@@ -1,12 +1,13 @@
 {
-	"item.faden.copper_coin": "Are Coin",
-	"item.faden.iron_coin": "Iron Coin",
-	"item.faden.ender_coin": "Ender Coin",
-	"item.faden.silver_coin": "Silver Coin",
-	"item.faden.gold_coin": "Gold Coin",
-	"item.faden.amethyst_coin": "Drunklack Coin",
-	"item.faden.netherite_coin": "Netherite Coin",
+	"item.faden.copper_coin": "Are Mint",
+	"item.faden.iron_coin": "Iron Mint",
+	"item.faden.ender_coin": "Ender Mint",
+	"item.faden.silver_coin": "Silver Mint",
+	"item.faden.gold_coin": "Gold Mint",
+	"item.faden.amethyst_coin": "Drunklack Mint",
+	"item.faden.netherite_coin": "Netherite Mint",
 	"item.faden.silver_ingot": "Silver Ingot",
-	"item.faden.random_coin_giver": "Hitormiss Coin Giver",
+	"item.faden.random_coin_giver": "Hitormiss Mint Giver",
 	"itemgroup.faden.misc": "Faden Misc"
+	"lore.faden.coin_value": "(Sooth Mint Worthen)"
 }

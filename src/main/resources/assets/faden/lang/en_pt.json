@@ -9,4 +9,5 @@
 	"item.faden.silver_ingot": "Bullion o' silver",
 	"item.faden.random_coin_giver": "Lots o' money",
 	"itemgroup.faden.misc": "Faden Trinkets"
+	"lore.faden.coin_value": "(What yer loot be worth)"
 }

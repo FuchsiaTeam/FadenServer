@@ -9,4 +9,5 @@
 	"item.faden.silver_ingot": "Silver Ingot",
 	"item.faden.random_coin_giver": "Giver of a Random Quantity of Coinage",
 	"itemgroup.faden.misc": "Faden Misc"
+	"lore.faden.coin_value": "(The True Value of This Coinage)"
 }

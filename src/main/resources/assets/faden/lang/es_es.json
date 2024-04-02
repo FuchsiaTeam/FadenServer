@@ -9,4 +9,5 @@
 	"item.faden.silver_ingot": "Lingote de plata",
 	"item.faden.random_coin_giver": "Dador de una cantidad aleatoria de monedas",
 	"itemgroup.faden.misc": "Misceláneos de Faden"
+	"lore.faden.coin_value": "(Valor real de moneda)"
 }
