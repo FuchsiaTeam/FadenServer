@@ -46,11 +46,6 @@ public class CoinMap {
 			addCurrency(world, pos, inventory, currentAmount - amount);
 		} else {
 			for (int i = 0; i < inventory.size(); i++) {
-				/* 
-				 * technically no reason to do this but there's also no point 
-				 * iterating through every item slot if we've already removed 
-				 * the correct amount
-				 */
 				if (amount == 0) {
 					break;
 				}
