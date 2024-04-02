@@ -44,9 +44,20 @@ public class CoinMap {
 			addCurrency(world, pos, inventory, currentAmount - amount);
 		} else {
 			for (int i = 0; i < inventory.size(); i++) {
+				/* 
+				 * technically no reason to do this but there's also no point 
+				 * iterating through every item slot if we've already removed 
+				 * the correct amount
+				 */
 				if (amount == 0) {
 					break;
 				} else {
+					/*
+					 * The process (as described by TheGingerDoctor):
+					 * Can we remove the whole stack?
+					 * Can we remove some of the items in this stack to get closer to the required amount?
+					 * We need to split this single coin up by removing it and giving back the value required
+					 */
 					if (inventory.getStack(i).getItem() instanceof CoinItem coinItem) {
 						ItemStack itemStack = inventory.getStack(i);
 						int value = coinItem.value;
@@ -56,27 +67,23 @@ public class CoinMap {
 							inventory.setStack(i, Items.AIR.getDefaultStack());
 							amount -= total;
 						} else {
-							int itemCount = count;
-							while (itemCount > 0) {
-								// this if statement is probably unnecessary but I'm not risking anything
-								if (amount == 0) {
-									break;
-								} else {
-									int currentTotal = value * itemCount;
-									if (amount >= currentTotal) {
-										itemStack.setCount(itemStack.getCount() - itemCount);
-										inventory.setStack(i, itemStack);
-										amount -= currentTotal;
-									}
+							for (int itemCount = count; itemCount > 0; itemCount--) {
+								int currentTotal = value * itemCount;
+								if (amount >= currentTotal) {
+									itemStack.setCount(itemStack.getCount() - itemCount);
+									inventory.setStack(i, itemStack);
+									amount -= currentTotal;
 								}
-								itemCount--;
 							}
 							if (amount > 0) {
+								/*
+								 * We know at this point that we've removed as many coins as we can, so we just need to remove one coin from the stack
+								 */
 								itemStack.setCount(itemStack.getCount() - 1);
 								inventory.setStack(i, itemStack);
 								int refund = value - amount;
 								addCurrency(world, pos, inventory, refund);
-								break;
+								amount = 0;
 							}
 						}
 					}
