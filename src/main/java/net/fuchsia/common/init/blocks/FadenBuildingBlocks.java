@@ -1,11 +1,12 @@
 package net.fuchsia.common.init.blocks;
 
+import json.jayson.faden.core.datagen.DataBlockType;
+import json.jayson.faden.core.datagen.DataToolTier;
+import json.jayson.faden.core.datagen.DataToolType;
+import json.jayson.faden.core.datagen.FadenCoreDataGen;
+import json.jayson.faden.core.datagen.holders.BuildingBlockDataEntry;
 import net.fuchsia.common.objects.block.BlossomRodBlock;
 import net.fuchsia.common.objects.block.FadenCraftingTable;
-import net.fuchsia.datagen.DataBlockType;
-import net.fuchsia.datagen.DataToolTier;
-import net.fuchsia.datagen.DataToolType;
-import net.fuchsia.datagen.holders.BuildingBlockDataEntry;
 import net.fuchsia.util.FadenIdentifier;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -14,7 +15,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import org.jetbrains.annotations.Nullable;
 
-import static net.fuchsia.common.init.blocks.FadenCoreBlocks.BUILDING_BLOCKS;
 
 public class FadenBuildingBlocks {
 
@@ -95,7 +95,7 @@ public class FadenBuildingBlocks {
     public static Block registerBlock(String name, Block block, @Nullable Block base, DataToolType toolType, DataToolTier tier, DataBlockType blockType, boolean dropSelf, boolean language) {
         Block registeredBlock = Registry.register(Registries.BLOCK, FadenIdentifier.create(name), block);
         Registry.register(Registries.ITEM, FadenIdentifier.create(name), new BlockItem(registeredBlock, new Item.Settings()));
-        BUILDING_BLOCKS.add(new BuildingBlockDataEntry(block, base, toolType, tier, blockType, dropSelf, language));
+        FadenCoreDataGen.BLOCKS.add(new BuildingBlockDataEntry(block, base, toolType, tier, blockType, dropSelf, language));
         return registeredBlock;
     }
 
@@ -121,7 +121,7 @@ public class FadenBuildingBlocks {
     }
 
 
-    public static void register() {}
+    public static void init() {}
 
 
 }

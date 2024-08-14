@@ -26,6 +26,6 @@ public class FadenSoundEvents {
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
     }
 
-    public static void register() {}
+    public static void init() {}
 
 }

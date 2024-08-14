@@ -1,7 +1,7 @@
 package net.fuchsia.client.mixin;
 
-import net.fuchsia.client.FadenCoreClient;
-import net.fuchsia.common.init.FadenSoundEvents;
+import json.jayson.faden.core.client.FadenCoreClient;
+import net.fuchsia.client.FadenClient;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.SplashTextRenderer;
 import net.minecraft.client.gui.screen.TitleScreen;
@@ -32,7 +32,7 @@ public class TitlescreenMixin {
     @Inject(method = "init", at = @At(value = "TAIL"))
     public void init(CallbackInfo ci) {
         if(!splashSet) {
-            splashText = new SplashTextRenderer(FadenCoreClient.SPLASHES.get(new Random().nextInt(FadenCoreClient.SPLASHES.size())));
+            splashText = new SplashTextRenderer(FadenClient.SPLASHES.get(new Random().nextInt(FadenClient.SPLASHES.size())));
             splashSet = true;
         }
     }

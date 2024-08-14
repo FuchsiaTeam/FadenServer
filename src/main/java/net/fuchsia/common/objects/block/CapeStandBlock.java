@@ -1,8 +1,8 @@
 package net.fuchsia.common.objects.block;
 
+import json.jayson.faden.core.client.screen.CapeSelectScreen;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fuchsia.client.screen.CapeSelectScreen;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;

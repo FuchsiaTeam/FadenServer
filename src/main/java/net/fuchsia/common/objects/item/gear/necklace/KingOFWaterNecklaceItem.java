@@ -1,8 +1,9 @@
 package net.fuchsia.common.objects.item.gear.necklace;
 
-import net.fuchsia.FadenCore;
-import net.fuchsia.common.init.FadenCoreDataComponents;
-import net.fuchsia.common.objects.item.ItemTier;
+import json.jayson.faden.core.FadenCore;
+import json.jayson.faden.core.common.init.FadenCoreDataComponents;
+import json.jayson.faden.core.common.objects.item.ItemTier;
+import json.jayson.faden.core.common.objects.item.gear.necklace.NecklaceItem;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;

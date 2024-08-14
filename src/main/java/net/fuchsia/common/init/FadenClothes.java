@@ -1,10 +1,10 @@
 package net.fuchsia.common.init;
 
-import net.fuchsia.common.init.items.FadenCoreItems;
-import net.fuchsia.common.objects.item.cloth.ClothItem;
-import net.fuchsia.datagen.DataItemModel;
-import net.fuchsia.datagen.holders.FadenDataItem;
-import net.fuchsia.util.FadenCoreIdentifier;
+import json.jayson.faden.core.common.init.FadenCoreClothes;
+import json.jayson.faden.core.common.objects.item.cloth.ClothItem;
+import json.jayson.faden.core.datagen.DataItemModel;
+import json.jayson.faden.core.datagen.FadenCoreDataGen;
+import json.jayson.faden.core.datagen.holders.FadenDataItem;
 import net.fuchsia.util.FadenIdentifier;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -16,7 +16,7 @@ public class FadenClothes {
 
     public static <T extends ClothItem> T registerItem(String name, T item, String texture, DataItemModel itemModel) {
         T i = Registry.register(Registries.ITEM, FadenIdentifier.create(name), item);
-        FadenCoreItems.ITEMS.add(new FadenDataItem(i, texture, itemModel, null));
+        FadenCoreDataGen.ITEMS.add(new FadenDataItem(i, texture, itemModel, null));
         FadenCoreClothes.CLOTHES.add(i);
         return i;
     }
@@ -25,6 +25,6 @@ public class FadenClothes {
         return registerItem(name, item, texture, DataItemModel.GENERATED);
     }
 
-    public static void register() {}
+    public static void init() {}
 
 }

@@ -1,36 +1,31 @@
 package net.fuchsia.common.init;
 
-import net.fuchsia.common.npc.INPC;
-import net.fuchsia.common.npc.NPCTexture;
-import net.fuchsia.common.quest.FadenQuests;
-import net.fuchsia.common.race.Race;
-import net.fuchsia.server.PlayerData;
+import json.jayson.faden.core.common.npc.NPC;
+import json.jayson.faden.core.common.npc.NPCTexture;
+import json.jayson.faden.core.common.race.Race;
+import json.jayson.faden.core.registry.FadenCoreRegistry;
+import json.jayson.faden.core.server.PlayerData;
 import net.fuchsia.util.FadenIdentifier;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3d;
 
-import java.util.ArrayList;
-
 public class FadenNPCs {
-    public static INPC TEST = FadenCoreNPCs.register(new INPC() {
+    public static NPC TEST = register("test", new NPC() {
         @Override
         public NPCTexture getTexture() {
             return new NPCTexture("black_harengon", true, Identifier.of("faden:skin/black/black_harengon_default"));
         }
 
         @Override
-        public Identifier getId() {
-            return FadenIdentifier.create("test");
-        }
-
-        @Override
         public ActionResult interaction(PlayerEntity player, Vec3d hitPos, Hand hand) {
             FadenQuests.TEST.startQuest(player.getUuid());
-            player.sendMessage(Text.literal("test"), false);
+            FadenQuests.TEST.checkAndRewardStep(player, FadenIdentifier.create("talk_to_npc_again"));
+            FadenQuests.TEST.checkAndRewardStep(player, FadenIdentifier.create("talk_to_npc"));
             return ActionResult.CONSUME;
         }
 
@@ -52,5 +47,9 @@ public class FadenNPCs {
         }
     });
 
-    public static void register() {}
+    public static NPC register(String name, NPC npc) {
+        return Registry.register(FadenCoreRegistry.NPC, FadenIdentifier.create(name), npc);
+    }
+
+    public static void init() {}
 }

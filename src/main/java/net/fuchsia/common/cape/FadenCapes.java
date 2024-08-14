@@ -1,22 +1,30 @@
 package net.fuchsia.common.cape;
 
+import json.jayson.faden.core.common.cape.FadenCoreCape;
+import json.jayson.faden.core.registry.FadenCoreRegistry;
 import net.fuchsia.util.FadenIdentifier;
+import net.minecraft.registry.Registry;
+import net.minecraft.text.Text;
 
 public class FadenCapes {
 
-    public static final FadenCape FUCHSIA = FadenCoreCapes.register(FadenIdentifier.create("fuchsia"));
-    public static final FadenCape DEVELOPER = FadenCoreCapes.register(FadenIdentifier.create("developer"));
-    public static final FadenCape PIXEL_ARTIST = FadenCoreCapes.register(FadenIdentifier.create("pixel_artist"));
-    public static final FadenCape MUSIC_ARTIST = FadenCoreCapes.register(FadenIdentifier.create("music_artist"));
-    public static final FadenCape TRANSLATOR = FadenCoreCapes.register(FadenIdentifier.create("translator"));
-    public static final FadenCape STAFF = FadenCoreCapes.register(FadenIdentifier.create("staff"));
-    public static final FadenCape DONATOR = FadenCoreCapes.register(FadenIdentifier.create("donator"));
-    public static final FadenCape DATA = FadenCoreCapes.register(FadenIdentifier.create("data"));
-    public static final FadenCape BUILDER = FadenCoreCapes.register(FadenIdentifier.create("builder"));
-    public static final FadenCape DT10 = FadenCoreCapes.register(FadenIdentifier.create("dt10"));
-    public static final FadenCape SAKURA = FadenCoreCapes.register(FadenIdentifier.create("sakura"));
-    public static final FadenCape BLACKJACK = FadenCoreCapes.register(FadenIdentifier.create("blackjack"));
+    public static final FadenCoreCape FUCHSIA = register("fuchsia");
+    public static final FadenCoreCape DEVELOPER = register("developer");
+    public static final FadenCoreCape PIXEL_ARTIST = register("pixel_artist");
+    public static final FadenCoreCape MUSIC_ARTIST = register("music_artist");
+    public static final FadenCoreCape TRANSLATOR = register("translator");
+    public static final FadenCoreCape STAFF = register("staff");
+    public static final FadenCoreCape DONATOR = register("donator");
+    public static final FadenCoreCape DATA = register("data");
+    public static final FadenCoreCape BUILDER = register("builder");
+    public static final FadenCoreCape DT10 = register("dt10");
+    public static final FadenCoreCape SAKURA = register("sakura");
+    public static final FadenCoreCape BLACKJACK = register("blackjack");
 
-    public static void register() {}
+    public static FadenCoreCape register(String name) {
+        return Registry.register(FadenCoreRegistry.CAPE, FadenIdentifier.create(name), new FadenCoreCape(Text.translatable("cape.faden." + name), Text.translatable("cape.faden." + name + ".description")));
+    }
+
+    public static void init() {}
 
 }

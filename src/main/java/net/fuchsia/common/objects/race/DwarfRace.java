@@ -1,9 +1,9 @@
 package net.fuchsia.common.objects.race;
 
 import com.google.common.collect.Multimap;
-import net.fuchsia.common.race.Race;
-import net.fuchsia.common.race.RaceModelType;
-import net.fuchsia.common.race.cosmetic.RaceCosmeticPalette;
+import json.jayson.faden.core.common.race.Race;
+import json.jayson.faden.core.common.race.RaceModelType;
+import json.jayson.faden.core.common.race.cosmetic.RaceCosmeticPalette;
 import net.fuchsia.util.FadenIdentifier;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
@@ -14,7 +14,7 @@ import org.joml.Vector3f;
 public class DwarfRace extends Race {
 
     public DwarfRace() {
-        super(FadenIdentifier.create("dwarf"), new String[]{"default"}, new Vector3f(1, 0.65f, 1));
+        super(new String[]{"default"}, new Vector3f(1, 0.65f, 1));
     }
 
     @Override

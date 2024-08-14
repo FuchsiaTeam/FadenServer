@@ -1,9 +1,9 @@
 package net.fuchsia.common.objects.songs;
 
+import json.jayson.faden.core.common.objects.item.instrument.InstrumentType;
+import json.jayson.faden.core.common.objects.music_instance.InstrumentedMusic;
 import net.fuchsia.common.init.FadenSoundEvents;
-import net.fuchsia.common.objects.item.instrument.InstrumentType;
-import net.fuchsia.common.objects.music_instance.InstrumentedMusic;
-import net.fuchsia.util.FadenCoreIdentifier;
+import net.fuchsia.util.FadenIdentifier;
 
 public class BurningMemoryMusic extends InstrumentedMusic {
 
@@ -18,6 +18,6 @@ public class BurningMemoryMusic extends InstrumentedMusic {
 
     @Override
     public String getId() {
-        return FadenCoreIdentifier.create("burning_memory").toString();
+        return FadenIdentifier.create("burning_memory").toString();
     }
 }

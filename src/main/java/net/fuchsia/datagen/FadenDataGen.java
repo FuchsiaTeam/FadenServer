@@ -2,8 +2,8 @@ package net.fuchsia.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.fuchsia.datagen.asset.FadenDataModelProvider;
-import net.fuchsia.datagen.data.*;
+import json.jayson.faden.core.datagen.asset.*;
+import json.jayson.faden.core.datagen.data.*;
 
 public class FadenDataGen implements DataGeneratorEntrypoint {
 

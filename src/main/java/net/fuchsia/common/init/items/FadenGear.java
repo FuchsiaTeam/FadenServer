@@ -1,21 +1,22 @@
 package net.fuchsia.common.init.items;
 
-import net.fuchsia.common.objects.item.gear.bracelet.BraceletItem;
+import json.jayson.faden.core.common.objects.item.gear.bracelet.BraceletItem;
+import json.jayson.faden.core.common.objects.item.gear.necklace.NecklaceItem;
+import json.jayson.faden.core.datagen.DataItemModel;
+import json.jayson.faden.core.datagen.FadenCoreDataGen;
+import json.jayson.faden.core.datagen.holders.FadenDataItem;
 import net.fuchsia.common.objects.item.gear.bracelet.TestBracelet;
 import net.fuchsia.common.objects.item.gear.bracelet.WarriorBracelet;
 import net.fuchsia.common.objects.item.gear.necklace.FrogPendant;
 import net.fuchsia.common.objects.item.gear.necklace.KingOFWaterNecklaceItem;
-import net.fuchsia.common.objects.item.gear.necklace.NecklaceItem;
-import net.fuchsia.datagen.DataItemModel;
-import net.fuchsia.datagen.holders.FadenDataItem;
-import net.fuchsia.util.FadenCoreIdentifier;
 import net.fuchsia.util.FadenIdentifier;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 
-import static net.fuchsia.common.init.items.FadenCoreGear.BRACELETS;
-import static net.fuchsia.common.init.items.FadenCoreGear.NECKLACES;
+import static json.jayson.faden.core.common.init.items.FadenCoreGear.BRACELETS;
+import static json.jayson.faden.core.common.init.items.FadenCoreGear.NECKLACES;
+
 
 public class FadenGear {
 
@@ -27,7 +28,7 @@ public class FadenGear {
 
     public static <T extends BraceletItem> T registerBracelet(String name, T item, String texture, DataItemModel itemModel) {
         T i = Registry.register(Registries.ITEM, FadenIdentifier.create(name), item);
-        FadenCoreItems.ITEMS.add(new FadenDataItem(i, texture, itemModel, null));
+        FadenCoreDataGen.ITEMS.add(new FadenDataItem(i, texture, itemModel, null));
         BRACELETS.add(i);
         return i;
     }
@@ -38,7 +39,7 @@ public class FadenGear {
 
     public static <T extends NecklaceItem> T registerNecklace(String name, T item, String texture, DataItemModel itemModel) {
         T i = Registry.register(Registries.ITEM, FadenIdentifier.create(name), item);
-        FadenCoreItems.ITEMS.add(new FadenDataItem(i, texture, itemModel, null));
+        FadenCoreDataGen.ITEMS.add(new FadenDataItem(i, texture, itemModel, null));
         NECKLACES.add(i);
         return i;
     }
@@ -47,6 +48,6 @@ public class FadenGear {
         return registerNecklace(name, item, texture, DataItemModel.GENERATED);
     }
 
-    public static void register() {}
+    public static void init() {}
 
 }

@@ -27,6 +27,6 @@ public class FadenCraftingItems {
     public static Item WHITE_CLOTH = registerItem("white_cloth", new Item(new Item.Settings()), "crafting/cloth/white", FadenTabs.FADEN_CRAFTING);
     public static Item YELLOW_CLOTH = registerItem("yellow_cloth", new Item(new Item.Settings()), "crafting/cloth/yellow", FadenTabs.FADEN_CRAFTING);
 
-    public static void register() {}
+    public static void init() {}
 
 }

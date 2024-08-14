@@ -2,7 +2,7 @@ package net.fuchsia.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fuchsia.common.init.blocks.FadenBuildingBlocks;
-import net.fuchsia.util.FadenCoreIdentifier;
+import net.fuchsia.util.FadenIdentifier;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
@@ -12,7 +12,7 @@ import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
 
-public class FadenRecipeProvider extends net.fuchsia.datagen.data.FadenRecipeProvider {
+public class FadenRecipeProvider extends json.jayson.faden.core.datagen.data.FadenRecipeProvider {
     public FadenRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
@@ -32,7 +32,7 @@ public class FadenRecipeProvider extends net.fuchsia.datagen.data.FadenRecipePro
                 .pattern("CR")
                 .criterion(hasItem(FadenBuildingBlocks.GRANITE_BRICKS), conditionsFromItem(FadenBuildingBlocks.GRANITE_BRICKS))
                 .criterion(hasItem(Blocks.MUD_BRICKS), conditionsFromItem(Blocks.MUD_BRICKS))
-                .offerTo(exporter, FadenCoreIdentifier.create(Registries.BLOCK.getId(FadenBuildingBlocks.GRANUD_TILES).getPath()));
+                .offerTo(exporter, FadenIdentifier.create(Registries.BLOCK.getId(FadenBuildingBlocks.GRANUD_TILES).getPath()));
     }
 
 }

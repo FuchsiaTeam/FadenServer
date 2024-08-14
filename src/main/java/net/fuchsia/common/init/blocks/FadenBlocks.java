@@ -26,6 +26,6 @@ public class FadenBlocks {
         return registeredBlock;
     }
 
-    public static void register() {}
+    public static void init() {}
 
 }

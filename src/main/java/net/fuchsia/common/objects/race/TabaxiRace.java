@@ -1,11 +1,11 @@
 package net.fuchsia.common.objects.race;
 
-import net.fuchsia.common.race.Race;
-import net.fuchsia.common.race.RaceModelType;
-import net.fuchsia.common.race.cosmetic.RaceCosmetic;
-import net.fuchsia.common.race.cosmetic.RaceCosmeticPalette;
-import net.fuchsia.common.race.cosmetic.RaceCosmeticSlot;
-import net.fuchsia.server.PlayerData;
+import json.jayson.faden.core.common.race.Race;
+import json.jayson.faden.core.common.race.RaceModelType;
+import json.jayson.faden.core.common.race.cosmetic.RaceCosmetic;
+import json.jayson.faden.core.common.race.cosmetic.RaceCosmeticPalette;
+import json.jayson.faden.core.common.race.cosmetic.RaceCosmeticSlot;
+import json.jayson.faden.core.server.PlayerData;
 import net.fuchsia.util.FadenIdentifier;
 import org.joml.Vector3f;
 
@@ -15,7 +15,7 @@ import java.util.Random;
 public class TabaxiRace extends Race {
 
     public TabaxiRace() {
-        super(FadenIdentifier.create("tabaxi"), new String[]{""}, new Vector3f(1, 1, 1));
+        super(new String[]{""}, new Vector3f(1, 1, 1));
     }
 
     @Override

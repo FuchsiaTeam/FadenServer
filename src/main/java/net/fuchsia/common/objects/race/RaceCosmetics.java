@@ -1,7 +1,7 @@
 package net.fuchsia.common.objects.race;
 
-import net.fuchsia.common.race.cosmetic.RaceCosmeticPalette;
-import net.fuchsia.common.race.cosmetic.RaceCosmeticSlot;
+import json.jayson.faden.core.common.race.cosmetic.RaceCosmeticPalette;
+import json.jayson.faden.core.common.race.cosmetic.RaceCosmeticSlot;
 
 public class RaceCosmetics {
 

@@ -1,8 +1,8 @@
 package net.fuchsia.common.init.items;
 
+import json.jayson.faden.core.common.objects.item.instrument.InstrumentItem;
+import json.jayson.faden.core.common.objects.item.instrument.InstrumentType;
 import net.fuchsia.common.init.FadenTabs;
-import net.fuchsia.common.objects.item.instrument.InstrumentItem;
-import net.fuchsia.common.objects.item.instrument.InstrumentType;
 import net.minecraft.item.Item;
 
 import static net.fuchsia.common.init.items.FadenItems.registerItem;
@@ -15,6 +15,6 @@ public class FadenInstruments {
     public static Item DRUM = registerItem("drum", new InstrumentItem(new Item.Settings(), InstrumentType.DRUM), "test", FadenTabs.FADEN_INSTRUMENTS);
 
 
-    public static void register() {}
+    public static void init() {}
 
 }

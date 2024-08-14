@@ -1,6 +1,6 @@
 package net.fuchsia.common.objects.block;
 
-import net.fuchsia.client.screen.FadenCraftingScreenHandler;
+import json.jayson.faden.core.client.screen.FadenCraftingScreenHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CraftingTableBlock;
 import net.minecraft.screen.NamedScreenHandlerFactory;
