@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "fadencore:granite_brick_slab"
+        "recipe": "faden:granite_brick_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "fadencore:granite_brick_slab"
+      "faden:granite_brick_slab"
     ]
   }
 }

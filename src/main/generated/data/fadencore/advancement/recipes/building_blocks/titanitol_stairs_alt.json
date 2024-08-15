@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "fadencore:titanitol_stairs_alt"
+        "recipe": "faden:titanitol_stairs_alt"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "fadencore:titanitol_stairs_alt"
+      "faden:titanitol_stairs_alt"
     ]
   }
 }

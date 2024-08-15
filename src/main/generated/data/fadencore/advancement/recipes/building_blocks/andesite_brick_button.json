@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "fadencore:andesite_brick_button"
+        "recipe": "faden:andesite_brick_button"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "fadencore:andesite_brick_button"
+      "faden:andesite_brick_button"
     ]
   }
 }

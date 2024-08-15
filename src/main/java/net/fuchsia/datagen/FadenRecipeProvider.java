@@ -19,7 +19,6 @@ public class FadenRecipeProvider extends json.jayson.faden.core.datagen.data.Fad
 
     @Override
     public void generate(RecipeExporter exporter) {
-        super.generate(exporter);
         fourByFour(FadenBuildingBlocks.ANDESITE_BRICKS, Blocks.POLISHED_ANDESITE, exporter);
         fourByFour(FadenBuildingBlocks.DIORITE_BRICKS, Blocks.POLISHED_DIORITE, exporter);
         fourByFour(FadenBuildingBlocks.GRANITE_BRICKS, Blocks.POLISHED_GRANITE, exporter);
@@ -33,6 +32,7 @@ public class FadenRecipeProvider extends json.jayson.faden.core.datagen.data.Fad
                 .criterion(hasItem(FadenBuildingBlocks.GRANITE_BRICKS), conditionsFromItem(FadenBuildingBlocks.GRANITE_BRICKS))
                 .criterion(hasItem(Blocks.MUD_BRICKS), conditionsFromItem(Blocks.MUD_BRICKS))
                 .offerTo(exporter, FadenIdentifier.create(Registries.BLOCK.getId(FadenBuildingBlocks.GRANUD_TILES).getPath()));
+        super.generate(exporter);
     }
 
 }

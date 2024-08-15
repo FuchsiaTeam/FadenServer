@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "fadencore:spruce_crafting_table"
+        "recipe": "faden:spruce_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "fadencore:spruce_crafting_table"
+      "faden:spruce_crafting_table"
     ]
   }
 }

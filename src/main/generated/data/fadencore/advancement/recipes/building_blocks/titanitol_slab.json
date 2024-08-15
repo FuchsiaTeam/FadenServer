@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "fadencore:titanitol_slab"
+        "recipe": "faden:titanitol_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "fadencore:titanitol_slab"
+      "faden:titanitol_slab"
     ]
   }
 }

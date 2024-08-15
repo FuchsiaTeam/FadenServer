@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "fadencore:diorite_tile_slab"
+        "recipe": "faden:diorite_tile_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "fadencore:diorite_tile_slab"
+      "faden:diorite_tile_slab"
     ]
   }
 }

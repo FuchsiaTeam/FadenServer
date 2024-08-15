@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "fadencore:granite_tile_wall"
+        "recipe": "faden:granite_tile_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "fadencore:granite_tile_wall"
+      "faden:granite_tile_wall"
     ]
   }
 }

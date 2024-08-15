@@ -47,6 +47,38 @@ public class FadenNPCs {
         }
     });
 
+    public static NPC TEST2 = register("test2", new NPC() {
+        @Override
+        public NPCTexture getTexture() {
+            return new NPCTexture("black_harengon", true, Identifier.of("faden:skin/white/white_harengon_default"));
+        }
+
+        @Override
+        public ActionResult interaction(PlayerEntity player, Vec3d hitPos, Hand hand) {
+            FadenQuests.TEST.startQuest(player.getUuid());
+            FadenQuests.TEST.checkAndRewardStep(player, FadenIdentifier.create("talk_to_npc_again"));
+            FadenQuests.TEST.checkAndRewardStep(player, FadenIdentifier.create("talk_to_npc"));
+            return ActionResult.CONSUME;
+        }
+
+        @Override
+        public Race getRace() {
+            return FadenRaces.HARENGON;
+        }
+
+        @Override
+        public String getRaceSub() {
+            return "white";
+        }
+
+        @Override
+        public PlayerData.RaceDataCosmetics getRaceCosmetics() {
+            PlayerData.RaceDataCosmetics cosmetics = new PlayerData.RaceDataCosmetics();
+            cosmetics.getHead().add("ear_0");
+            return cosmetics;
+        }
+    });
+
     public static NPC register(String name, NPC npc) {
         return Registry.register(FadenCoreRegistry.NPC, FadenIdentifier.create(name), npc);
     }

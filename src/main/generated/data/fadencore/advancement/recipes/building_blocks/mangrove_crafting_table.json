@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "fadencore:mangrove_crafting_table"
+        "recipe": "faden:mangrove_crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "fadencore:mangrove_crafting_table"
+      "faden:mangrove_crafting_table"
     ]
   }
 }
