@@ -10,6 +10,7 @@ import net.fuchsia.util.FadenIdentifier;
 import org.joml.Vector3f;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class TabaxiRace extends Race {
@@ -30,20 +31,21 @@ public class TabaxiRace extends Race {
 
     @Override
     public PlayerData.RaceDataCosmetics randomizeCosmetics(String subId) {
-        ArrayList<RaceCosmetic> ears = new ArrayList<>();
-        ArrayList<RaceCosmetic> mouths = new ArrayList<>();
-        for (RaceCosmetic cosmetic : getCosmeticPalette().getCosmetics(subId)) {
-            if(cosmetic.getSlot() == RaceCosmeticSlot.HEAD) {
-                switch (cosmetic.getType()) {
-                    case "ear" -> ears.add(cosmetic);
-                    case "mouth" -> mouths.add(cosmetic);
-                }
-            }
-        }
+        List<RaceCosmetic> ears = new ArrayList<>();
+        List<RaceCosmetic> mouths = new ArrayList<>();
+        getCosmeticPalette().getCosmetics(subId).stream()
+                .filter(cosmetic -> cosmetic.getSlot() == RaceCosmeticSlot.HEAD)
+                .forEach(cosmetic -> {
+                    switch (cosmetic.getType()) {
+                        case "ear" -> ears.add(cosmetic);
+                        case "mouth" -> mouths.add(cosmetic);
+                    }
+                });
+
         Random random = new Random();
         PlayerData.RaceDataCosmetics dataCosmetics = new PlayerData.RaceDataCosmetics();
-        if(!ears.isEmpty()) dataCosmetics.getHead().add(ears.get(random.nextInt(ears.size())).getId());
-        if(!mouths.isEmpty()) dataCosmetics.getHead().add(mouths.get(random.nextInt(mouths.size())).getId());
+        if (!ears.isEmpty()) dataCosmetics.getHead().add(ears.get(random.nextInt(ears.size())).getId());
+        if (!mouths.isEmpty()) dataCosmetics.getHead().add(mouths.get(random.nextInt(mouths.size())).getId());
         return dataCosmetics;
     }
 }

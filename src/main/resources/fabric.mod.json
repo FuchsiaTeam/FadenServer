@@ -25,6 +25,9 @@
 		],
 		"client": [
 			"net.fuchsia.client.FadenClient"
+		],
+		"fadencore": [
+			"net.fuchsia.Faden"
 		]
 	},
 	"mixins": [
