@@ -1,0 +1,8 @@
+{
+  "name": "Test",
+  "id": "test_music",
+  "author": "TestAuthor",
+  "instruments": {
+    "faden:drum": "minecraft:block.copper.step"
+  }
+}

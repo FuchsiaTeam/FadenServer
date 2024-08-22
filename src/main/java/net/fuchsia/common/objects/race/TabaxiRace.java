@@ -25,7 +25,7 @@ public class TabaxiRace extends Race {
     }
 
     @Override
-    public RaceModelType model() {
+    public RaceModelType getModelType() {
         return RaceModelType.BOTH;
     }
 

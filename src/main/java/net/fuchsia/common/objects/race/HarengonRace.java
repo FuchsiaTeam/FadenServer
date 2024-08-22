@@ -23,7 +23,7 @@ public class HarengonRace extends Race {
     }
 
     @Override
-    public RaceModelType model() {
+    public RaceModelType getModelType() {
         return RaceModelType.SLIM;
     }
 

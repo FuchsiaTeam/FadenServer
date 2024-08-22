@@ -23,7 +23,7 @@ public class LocathahRace extends Race {
     }
 
     @Override
-    public RaceModelType model() {
+    public RaceModelType getModelType() {
         return RaceModelType.BOTH;
     }
 

@@ -17,7 +17,7 @@ public class HumanRace extends Race {
     }
 
     @Override
-    public RaceModelType model() {
+    public RaceModelType getModelType() {
         return RaceModelType.BOTH;
     }
 }

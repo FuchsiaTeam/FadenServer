@@ -18,7 +18,7 @@ public class ElfRace extends Race {
     }
 
     @Override
-    public RaceModelType model() {
+    public RaceModelType getModelType() {
         return RaceModelType.SLIM;
     }
 
