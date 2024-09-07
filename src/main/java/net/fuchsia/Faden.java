@@ -37,4 +37,9 @@ public class Faden implements ModInitializer, FadenCoreApi {
 	public void onInitialize() {
 		init();
 	}
+
+	@Override
+	public boolean enablePlayerData() {
+		return true;
+	}
 }

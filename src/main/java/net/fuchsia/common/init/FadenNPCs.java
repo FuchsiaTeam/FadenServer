@@ -14,6 +14,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3d;
 
+import java.util.Optional;
+
 public class FadenNPCs {
     public static NPC TEST = register("test", new NPC() {
         @Override
@@ -30,8 +32,8 @@ public class FadenNPCs {
         }
 
         @Override
-        public Race getRace() {
-            return FadenRaces.HARENGON;
+        public Optional<Race> getRace() {
+            return Optional.of(FadenRaces.HARENGON);
         }
 
         @Override
@@ -62,8 +64,8 @@ public class FadenNPCs {
         }
 
         @Override
-        public Race getRace() {
-            return FadenRaces.HARENGON;
+        public Optional<Race> getRace() {
+            return Optional.of(FadenRaces.HARENGON);
         }
 
         @Override
