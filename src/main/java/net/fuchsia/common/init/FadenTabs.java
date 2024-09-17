@@ -1,8 +1,7 @@
 package net.fuchsia.common.init;
 
-import json.jayson.faden.core.common.init.FadenCoreClothes;
 import json.jayson.faden.core.common.init.items.FadenCoreGear;
-import json.jayson.faden.core.common.objects.item.cloth.ClothItem;
+import json.jayson.faden.core.common.objects.item.IClothItem;
 import json.jayson.faden.core.common.objects.item.gear.bracelet.BraceletItem;
 import json.jayson.faden.core.common.objects.item.gear.necklace.NecklaceItem;
 import json.jayson.faden.core.datagen.FadenCoreDataGen;
@@ -34,8 +33,10 @@ public class FadenTabs {
 
     public static final ItemGroup FADEN_CLOTHES = Registry.register(Registries.ITEM_GROUP, FadenIdentifier.create("clothes_tab"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.faden.clothes")).icon(() -> new ItemStack(FadenItems.AMETHYST_COIN)).entries((displayContext, entries) -> {
-                for (ClothItem cloth : FadenCoreClothes.CLOTHES) {
-                    entries.add(cloth);
+                for (FadenDataItem item : FadenCoreDataGen.ITEMS) {
+                    if(item.item() instanceof IClothItem) {
+                        entries.add(item.item());
+                    }
                 }
             }).build());
 
